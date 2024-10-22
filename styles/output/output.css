@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  background-color: red;
+}
+
+.navigator {
+  height: 20px;
+  width: 200px;
+  background-color: blue;
+}
+
+/*# sourceMappingURL=output.css.map */
