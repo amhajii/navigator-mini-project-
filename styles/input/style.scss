@@ -1,132 +1,126 @@
 @import "imports";
 
-*{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
-body{
-    @include centeralize();
-    min-height: 100vh;
-    background-color: $main !important;
+body {
+  @include centeralize();
+  min-height: 100vh;
+  background-color: $main !important;
 }
-.navigator{
-    height: 100px;
-    width: 600px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-    $size:20px;
-    padding: 0 $size;
-    font-size: $size;
-    
-    ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        height: 100%;
-        position: relative;
-        
-        li{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-            width: 100px; 
-            position: relative;  
-            cursor: pointer;
+.navigator {
+  height: 100px;
+  width: 600px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  $size: 20px;
+  padding: 0 $size;
+  font-size: $size;
 
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+    position: relative;
 
-            &:nth-child(1).active ~ .indicator{
-                left: calc(20px + (140px)*0);
-            }
-            &:nth-child(2).active ~ .indicator{
-                left: calc(20px + (140px)*1);
-            }
-            &:nth-child(3).active ~ .indicator{
-                left: calc(20px + (140px)*2);
-            }
-            &:nth-child(4).active ~ .indicator{
-                left: calc(20px + (140px)*3);
-            }
-            &.active .icon-bx{
-                top: -20px;
-            }
-            &.active .icon{
-                color: #fff;
-            }
-            &.active .text{
-                opacity: 1;
-                bottom: 20px;
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 100px;
+      position: relative;
+      cursor: pointer;
 
-            }
+      &:nth-child(1).active ~ .indicator {
+        left: calc(20px + (140px) * 0);
+      }
+      &:nth-child(2).active ~ .indicator {
+        left: calc(20px + (140px) * 1);
+      }
+      &:nth-child(3).active ~ .indicator {
+        left: calc(20px + (140px) * 2);
+      }
+      &:nth-child(4).active ~ .indicator {
+        left: calc(20px + (140px) * 3);
+      }
+      &.active .icon-bx {
+        top: -20px;
+      }
+      &.active .icon {
+        color: #fff;
+      }
+      &.active .text {
+        opacity: 1;
+        bottom: 20px;
+      }
 
+      .icon-bx {
+        position: absolute;
+        top: 30px;
+        width: 100%;
+        z-index: 1;
+        transition: 0.2s;
 
-            
-
-            .icon-bx{
-                position: absolute;
-                top: 30px;
-                width: 100%;
-                z-index: 1;
-                transition:  .2s;
-
-                .icon{
-                    margin: auto;
-                    display: block;
-                    width: 50px;
-                    font-size: 30px;
-                    z-index: 1;
-                    transition: .3s;
-                }
-            }  
-            .text{
-                width: 100%;
-                text-align: center;
-                position: absolute;
-                bottom: 0;
-                opacity: 0;
-                bottom: -20px;
-                transition: .4s;
-            }
-
+        .icon {
+          margin: auto;
+          display: block;
+          width: 50px;
+          font-size: 30px;
+          z-index: 1;
+          transition: 0.3s;
         }
-
-        .indicator{
-            height: 100px;
-            aspect-ratio: 1;
-            background-color: blue;
-            border: 10px solid $main;
-            border-radius: 50%;
-            position: absolute;
-            top: -55px;
-            transition: .3s;
-
-            &::before{
-                content: '';
-                position: absolute;
-                height: 17px;
-                aspect-ratio: 1;
-                top: 57%;
-                left: -21px;
-                border-radius: 0 60px 0 0;
-                box-shadow: 3px -3px 0 3px $main;
-                // background-color: red;
-                // background-color: #fff;
-            }
-            &::after{
-                content: '';
-                position: absolute;
-                height: 17px;
-                aspect-ratio: 1;
-                top: 57%;
-                right: -21px;
-                border-radius:  60px 0 0 0;
-                box-shadow: -3px -3px 0 3px $main;
-            }
-        }
+      }
+      .text {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        opacity: 0;
+        bottom: -20px;
+        transition: 0.4s;
+      }
     }
+
+    .indicator {
+      height: 100px;
+      aspect-ratio: 1;
+      background-color: blue;
+      border: 10px solid $main;
+      border-radius: 50%;
+      position: absolute;
+      top: -55px;
+      transition: 0.3s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 17px;
+        aspect-ratio: 1;
+        top: 57%;
+        left: -21px;
+        border-radius: 0 60px 0 0;
+        box-shadow: 3px -3px 0 3px $main;
+        // background-color: red;
+        // background-color: #fff;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        height: 17px;
+        aspect-ratio: 1;
+        top: 57%;
+        right: -21px;
+        border-radius: 60px 0 0 0;
+        box-shadow: -3px -3px 0 3px $main;
+      }
+    }
+  }
 }
