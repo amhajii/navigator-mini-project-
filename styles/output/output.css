@@ -4,13 +4,117 @@
   border: 0;
   outline: 0;
   text-decoration: none;
-  background-color: red;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #2c2c2c !important;
 }
 
 .navigator {
-  height: 20px;
-  width: 200px;
+  height: 100px;
+  width: 600px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 0 20px;
+  font-size: 20px;
+}
+.navigator ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100%;
+  position: relative;
+}
+.navigator ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100px;
+  position: relative;
+  cursor: pointer;
+}
+.navigator ul li:nth-child(1).active ~ .indicator {
+  left: 20px;
+}
+.navigator ul li:nth-child(2).active ~ .indicator {
+  left: 160px;
+}
+.navigator ul li:nth-child(3).active ~ .indicator {
+  left: 300px;
+}
+.navigator ul li:nth-child(4).active ~ .indicator {
+  left: 440px;
+}
+.navigator ul li.active .icon-bx {
+  top: -20px;
+}
+.navigator ul li.active .icon {
+  color: #fff;
+}
+.navigator ul li.active .text {
+  opacity: 1;
+  bottom: 20px;
+}
+.navigator ul li .icon-bx {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  z-index: 1;
+  transition: 0.2s;
+}
+.navigator ul li .icon-bx .icon {
+  margin: auto;
+  display: block;
+  width: 50px;
+  font-size: 30px;
+  z-index: 1;
+  transition: 0.3s;
+}
+.navigator ul li .text {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  bottom: -20px;
+  transition: 0.4s;
+}
+.navigator ul .indicator {
+  height: 100px;
+  aspect-ratio: 1;
   background-color: blue;
+  border: 10px solid #2c2c2c;
+  border-radius: 50%;
+  position: absolute;
+  top: -55px;
+  transition: 0.3s;
+}
+.navigator ul .indicator::before {
+  content: "";
+  position: absolute;
+  height: 17px;
+  aspect-ratio: 1;
+  top: 57%;
+  left: -21px;
+  border-radius: 0 60px 0 0;
+  box-shadow: 3px -3px 0 3px #2c2c2c;
+}
+.navigator ul .indicator::after {
+  content: "";
+  position: absolute;
+  height: 17px;
+  aspect-ratio: 1;
+  top: 57%;
+  right: -21px;
+  border-radius: 60px 0 0 0;
+  box-shadow: -3px -3px 0 3px #2c2c2c;
 }
 
 /*# sourceMappingURL=output.css.map */
